@@ -202,6 +202,8 @@ open class SwiftyCamViewController: UIViewController {
 	/// Returns true if the torch (flash) is currently enabled
 
 	fileprivate var isCameraTorchOn              = false
+    
+    fileprivate var isCapturingAudio             = false
 
 	/// Variable to store result of capture session setup
 
@@ -242,7 +244,7 @@ open class SwiftyCamViewController: UIViewController {
 	/// Last changed orientation
 
 	fileprivate var deviceOrientation            : UIDeviceOrientation?
-
+    
 	/// Disable view autorotation for forced portrait recorindg
 
 	override open var shouldAutorotate: Bool {
