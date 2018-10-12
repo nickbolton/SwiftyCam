@@ -254,6 +254,13 @@ open class SwiftyCamViewController: UIViewController {
     /// Boolean to store when View Controller is notified session is running
 
     fileprivate var sessionRunning               = false
+    
+    fileprivate var captureAudio                 = true
+    
+    public convenience init(captureAudio: Bool) {
+        self.init()
+        self.captureAudio = captureAudio
+    }
 
 	/// Disable view autorotation for forced portrait recorindg
 
@@ -639,7 +646,9 @@ open class SwiftyCamViewController: UIViewController {
 		session.beginConfiguration()
 		configureVideoPreset()
 		addVideoInput()
-		addAudioInput()
+        if captureAudio {
+            addAudioInput()
+        }
 		configureVideoOutput()
 		configurePhotoOutput()
 
